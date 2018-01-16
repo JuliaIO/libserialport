@@ -8,4 +8,11 @@ environment:
 build_script:
   - '%APPVEYOR_BUILD_FOLDER%\appveyor.bat'
 
+after_build:
+  - '7z a libserialport-0.1.1.zip %APPVEYOR_BUILD_FOLDER%\usr'
+
+artifacts:
+  - path: libserialport-0.1.1.zip
+    name: libserialport-0.1.1
+
 deploy: off

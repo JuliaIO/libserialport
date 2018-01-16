@@ -29,7 +29,11 @@ rem Build/test scripting
 bash -xlc "set pwd"
 bash -xlc "env"
 
+rem Prep output directory
+bash -xlc "mkdir usr"
+
+rem Confifure and build
 bash -xlc "./autogen.sh"
-bash -xlc "./configure"
+bash -xlc "./configure --prefix=$(pwd)/usr"
 bash -xlc "make"
 bash -xlc "make install"
